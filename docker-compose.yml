@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    tty: true
+    environment:
+      - NODE_ENV=production
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c "cd sukinema-app && yarn start"
+    ports:
+      - "3000:3000"
