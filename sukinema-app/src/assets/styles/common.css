@@ -1,0 +1,530 @@
+html {
+  font-size: 62.5%; /* 10px*/
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: #555555;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.f_feature {
+  font-feature-settings: 'palt';
+  -webkit-font-feature-settings: 'palt';
+}
+
+/* ここまで共通　*/
+
+body {
+  text-align: center;
+  color: #555555;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', YuGothic,
+    'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, Arial, 'メイリオ', Meiryo,
+    sans-serif;
+  line-height: 2;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+#loader {
+  display: none;
+  background: linear-gradient(#ff4562, #ff4562);
+  opacity: 1;
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#loader img {
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 28px;
+}
+
+.logo {
+  width: calc(142 / 375 * 100%);
+  margin: 0 auto;
+}
+
+.logo a {
+  display: block;
+}
+
+.logo img {
+  width: 100%;
+  display: block;
+}
+
+nav {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.nav_inner {
+  display: block;
+  margin: 20px calc(20 / 375 * 100%) 0;
+}
+
+.sort_nav {
+  display: flex;
+  line-height: 1;
+}
+
+.sort_nav li {
+  display: block;
+  width: 33.3%;
+  padding: 8px 0px;
+  position: relative;
+}
+
+.sort_nav li::before,
+.sort_nav li::after {
+  width: 33.3%;
+  content: '';
+  border-bottom: 2px solid #ff4945;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  width: 0;
+}
+.sort_nav li::before {
+  left: 50%;
+}
+.sort_nav li::after {
+  right: 50%;
+}
+.sort_nav li:hover::before,
+.sort_nav li:hover::after {
+  width: 50%;
+}
+
+.off {
+  border-bottom: none !important;
+}
+
+.off a {
+  color: #bbbbbb !important;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 calc(20 / 375 * 100%) 30px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  opacity: 0.6;
+}
+
+.link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.image_content {
+  position: relative;
+}
+
+.image_content img {
+  border-radius: 10px 10px 0 0;
+  display: block;
+  width: 100%;
+}
+
+.place {
+  position: absolute;
+  bottom: calc(14 / 375 * 100%);
+  left: calc(14 / 375 * 100%);
+  color: #fff;
+  font-size: 1rem;
+  z-index: 100;
+  padding-left: 10px;
+}
+
+.place::before {
+  content: '\f3c5';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.rating {
+  position: absolute;
+  bottom: calc(14 / 375 * 100%);
+  right: calc(14 / 375 * 100%);
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  z-index: 100;
+}
+
+.rating_num {
+  padding-right: 4px;
+}
+
+.rating_star {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: relative;
+}
+
+.rating_star::before {
+  color: #aaa;
+  content: '\f005 \f005 \f005 \f005 \f005';
+  display: block;
+}
+
+.rating_star::after {
+  color: #fff;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+/* レーティング */
+
+.rating_00 .rating_star::after {
+  content: '\00a0 \00a0 \00a0 \00a0 \00a0';
+}
+
+.rating_05 .rating_star::after {
+  content: '\00a0 \00a0 \00a0 \00a0';
+}
+
+.rating_10 .rating_star::after {
+  content: '\00a0 \00a0 \00a0 \00a0';
+}
+
+.rating_15 .rating_star::after {
+  content: '\00a0 \00a0 \00a0';
+}
+
+.rating_20 .rating_star::after {
+  content: '\00a0 \00a0 \00a0';
+}
+
+.rating_25 .rating_star::after {
+  content: '\00a0 \00a0';
+}
+
+.rating_30 .rating_star::after {
+  content: '\00a0 \00a0';
+}
+
+.rating_35 .rating_star::after {
+  content: '\00a0';
+}
+
+.rating_40 .rating_star::after {
+  content: '\00a0';
+}
+
+.rating_45 .rating_star::after {
+  content: '';
+}
+
+.rating_50 .rating_star::after {
+  content: '';
+}
+
+.img_box {
+  position: relative;
+}
+
+.img_box::before {
+  content: '';
+  display: block;
+  background: url(../img/gra.png) repeat-x left bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.content {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(20 / 375 * 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+.left_text {
+  width: 25%;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.time {
+  font-size: 2.4rem;
+}
+
+.right_text {
+  /* width: 80%; */
+  min-height: 3em;
+  text-align: left;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+/*  ここからモーダル  */
+
+.modal {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+}
+
+.modal_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.modal_bg {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.modal_cont {
+  background-color: #fff;
+  margin: auto calc(20 / 375 * 100%);
+  z-index: 100001;
+  border-radius: 10px;
+  padding: calc(20 / 375 * 100%);
+}
+
+.mo_upper {
+  display: flex;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.mo_img {
+  width: calc(100 / 375 * 100%);
+  min-width: 100px;
+  margin-right: 4%;
+}
+
+.mo_img img {
+  width: 100%;
+}
+
+.mo_ttl {
+  width: 100%;
+  min-width: 0;
+}
+
+.mo_ttl h2 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+}
+
+.mo_date,
+.mo_place,
+.mo_time {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 18px;
+  color: #555;
+  margin-bottom: 8px;
+  word-break: keep-all;
+  display: block;
+}
+
+.mo_place {
+  letter-spacing: 0.06em;
+}
+
+.mo_date::before {
+  content: '\f272';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #ff4562;
+}
+
+.mo_place::before {
+  content: '\f3c5';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 1px;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #ff4562;
+}
+
+.mo_time::before {
+  content: '\f017';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #ff4562;
+}
+
+.mo_txt {
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  height: 140px;
+  overflow: scroll;
+  padding-right: 10px;
+  letter-spacing: 0.06em;
+}
+
+.button_area a {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 16px;
+  color: #fff;
+  background-color: #ff4562;
+}
+
+footer {
+  color: #ccc;
+  height: 40px;
+}
+
+@media screen and (min-width: 560px) {
+  /* タブレット */
+  nav {
+    margin: calc(16 / 375 * 100%) 0;
+  }
+
+  .card {
+    width: calc(96% / 2); /* 100%幅を2で割るという指定 */
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /* PC */
+  a:link,
+  a:visited,
+  a:hover {
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
+
+  body {
+    font-size: 1.6rem; /* 16px*/
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  h1 img:hover {
+    opacity: 0.6;
+  }
+
+  nav {
+    margin: calc(10 / 375 * 100%) 0;
+  }
+
+  main {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto 30px;
+  }
+  /* 最後の行が3列より少ない場合左寄せにレイアウトさせる */
+  main::after {
+    content: '';
+    display: block;
+    width: calc(96% / 3);
+  }
+  .card {
+    width: calc(96% / 3); /* 100%幅を3で割るという指定 */
+    margin: 0px 0px 30px;
+  }
+  .modal_cont {
+    width: 500px;
+    padding: 30px;
+  }
+  .mo_img {
+    width: 30%;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.sort_link {
+  cursor: pointer;
+}

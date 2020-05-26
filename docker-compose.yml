@@ -1,10 +1,11 @@
 version: "3"
 services:
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile.dev
     tty: true
+    stdin_open: true
     environment:
       - NODE_ENV=production
       - CHOKIDAR_USEPOLLING=true
