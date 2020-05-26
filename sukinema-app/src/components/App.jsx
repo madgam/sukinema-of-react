@@ -22,7 +22,7 @@ const App = () => {
   }
 
   const getCurrentLocation = () => {
-    Geocode.setApiKey('AIzaSyBu833ZGXQcjPqTibgcCn0SpCrFGj3vPMc');
+    Geocode.setApiKey(process.env.REACT_APP_GOOGLE_API_KEY);
     Geocode.setLanguage('ja');
     Geocode.setRegion('jp');
     setIsLoading(true);
