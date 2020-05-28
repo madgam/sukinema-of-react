@@ -24,7 +24,7 @@ const _distanceSort = (a, b) => {
 
   return _a_distance === _b_distance
     ? _a_time - _b_time
-    : _b_distance - _a_distance;
+    : _a_distance - _b_distance;
 };
 
 const _reviewSort = (a, b) => {
@@ -33,9 +33,9 @@ const _reviewSort = (a, b) => {
   return _a_review === _b_review ? a.title - b.title : _b_review - _a_review;
 };
 
-const Sort = (movies, id, latlong) => {
+const Sort = (movies, sortID, latlong) => {
   const valuedMovies = SetValue(movies, latlong);
-  switch (id) {
+  switch (sortID) {
     case 'time':
       // 時間順でソート
       return valuedMovies.sort(_timeSort);
@@ -44,13 +44,6 @@ const Sort = (movies, id, latlong) => {
       return valuedMovies.sort(_distanceSort);
     case 'review':
       // レビューでソート
-      // const sorted = valuedMovies.sort(_reviewSort);
-      // // const reduced = sorted.filter(
-      // //   (x, i, self) => self.indexOf(x.title) === i.title
-      // // );
-      // const reduced = new Map(sorted.map((o) => [o.title, o]));
-      // console.log(reduced);
-      // return reduced;
       return valuedMovies.sort(_reviewSort);
   }
 };

@@ -42,7 +42,6 @@ body {
 }
 
 #loader {
-  display: none;
   background: linear-gradient(#ff4562, #ff4562);
   opacity: 1;
   position: fixed;
@@ -125,6 +124,16 @@ nav {
 .sort_nav li:hover::before,
 .sort_nav li:hover::after {
   width: 50%;
+}
+
+.sort_link_on {
+  background-color: #ff4945;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.sort_link_on:hover {
+  border-bottom: none !important;
 }
 
 .off {
@@ -325,7 +334,6 @@ main {
 /*  ここからモーダル  */
 
 .modal {
-  display: none;
   height: 100%;
   width: 100%;
   position: fixed;

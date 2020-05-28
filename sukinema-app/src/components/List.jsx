@@ -1,9 +1,19 @@
 import React from 'react';
 
-const List = ({ movie }) => {
+const List = ({ movie, openModal, initmovieID }) => {
+  const initModal = () => {
+    initmovieID(movie.index);
+    openModal();
+  };
+
   return (
     <React.Fragment>
-      <a className='link js-modal-open' id={movie.index} href='#'></a>
+      <a
+        className='link js-modal-open'
+        onClick={initModal}
+        id={movie.index}
+        // href='javascript:void(0)'
+      ></a>
       <div className='image_content'>
         <div className='place'>
           <span>{movie.distance}</span>

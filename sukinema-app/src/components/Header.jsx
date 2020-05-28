@@ -1,46 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/img/logo.svg';
-import title from '../assets/img/ttl.svg';
 
-const Header = ({ setIsLoading, setSortID }) => {
-  const handler = (e) => {
-    e.preventDefault();
-  };
+const TIME_ID = 'time';
+const DISTANCE_ID = 'distance';
+const REVIEW_ID = 'review';
 
+const Header = ({
+  setIsLoading,
+  setSortID,
+  prefChange,
+  prefOption,
+  currentPref,
+}) => {
+  const [sortFlg, setSortFlg] = useState({
+    [TIME_ID]: true,
+    [DISTANCE_ID]: false,
+    [REVIEW_ID]: false,
+  });
   const linkHandler = (e) => {
     e.preventDefault();
-    const f = async () => {
-      setIsLoading(true);
-      setSortID(e.target.id);
-    };
-    f();
+    setSortFlg({ [e.target.id]: true });
+    setSortID(e.target.id);
   };
 
   return (
     <React.Fragment>
-      <div id='loader'>
-        <p className='title'>
-          <img src={title} alt='スキネマ　スキマ時間で映画を観よう' />
-        </p>
-      </div>
-
       <header>
-        <h1 className='logo'>
-          <span onClick={handler}>
-            <img src={logo} alt='スキネマ' />
-          </span>
-        </h1>
+        <div style={{ display: 'flex' }}>
+          <h1 className='logo'>
+            <span>
+              <img src={logo} alt='スキネマ' />
+            </span>
+            <span>
+              <select value={currentPref} onChange={prefChange}>
+                {prefOption}
+              </select>
+            </span>
+          </h1>
+        </div>
       </header>
       <nav>
         <div className='nav_inner'>
           <ul className='sort_nav'>
-            <li id='time' className='sort_link' onClick={linkHandler}>
+            <li
+              id={TIME_ID}
+              className={sortFlg[TIME_ID] ? 'sort_link_on' : 'sort_link'}
+              onClick={linkHandler}
+            >
               上映時間順
             </li>
-            <li id='distance' className='off sort_link' onClick={linkHandler}>
+            <li
+              id={DISTANCE_ID}
+              className={sortFlg[DISTANCE_ID] ? 'sort_link_on' : 'sort_link'}
+              onClick={linkHandler}
+            >
               距離順
             </li>
-            <li id='review' className='off sort_link' onClick={linkHandler}>
+            <li
+              id={REVIEW_ID}
+              className={sortFlg[REVIEW_ID] ? 'sort_link_on' : 'sort_link'}
+              onClick={linkHandler}
+            >
               人気順
             </li>
           </ul>
