@@ -59,7 +59,7 @@ const SetValue = (movies, latlong) => {
     const diffTime = getDiff(e.time);
     if (diffTime < 0) {
       return;
-    } else if (diffTime < 10) {
+    } else if (diffTime < 10 || diffTime > 120) {
       return;
     }
     const distance = GetDistance(
