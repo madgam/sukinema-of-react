@@ -103,6 +103,7 @@ nav {
   position: relative;
 }
 
+/*
 .sort_nav li::before,
 .sort_nav li::after {
   width: 33.3%;
@@ -125,6 +126,7 @@ nav {
 .sort_nav li:hover::after {
   width: 50%;
 }
+*/
 
 .sort_link_on {
   background-color: #ff4945;
