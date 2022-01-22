@@ -1,1 +1,1 @@
-export { default as PREF } from './pref';
+export { default as PREF } from './pref'

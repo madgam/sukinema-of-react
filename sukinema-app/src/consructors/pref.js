@@ -47,6 +47,6 @@ const PREF = [
   { name: '宮崎県', id: '45' },
   { name: '鹿児島県', id: '46' },
   { name: '沖縄県', id: '47' },
-];
+]
 
-export default PREF;
+export default PREF
